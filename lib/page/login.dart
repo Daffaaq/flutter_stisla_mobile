@@ -74,11 +74,34 @@ class _LoginPageState extends State<LoginPage> {
                       print(value.token);
                     },
                   );
-                  Navigator.pushNamed(context, '/');
+                  Navigator.pushNamed(context, '/dashboard');
                 },
                 child: Text('Login'),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "don't have account?",
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/register');
+                    },
+                    child: const Text(
+                      "Register",
+                      style: TextStyle(
+                        color: Color(0xff6777ef),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

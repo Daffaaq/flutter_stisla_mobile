@@ -25,7 +25,7 @@ class AuthService {
       body: {
         "email": email,
         "password": password,
-        "device_name": "oxychan",
+        "device_name": "daffa",
       },
       headers: {
         'Accept': 'application/json',
@@ -64,7 +64,7 @@ class AuthService {
         'email': email,
         'password': password,
         'password_confirmation': passwordConfirmation,
-        'device_name': 'oxychan',
+        'device_name': 'daffa',
       },
     );
 
