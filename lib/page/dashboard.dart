@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:flutter_stisla_mobile/page/add_category.dart';
-// import 'package:flutter_stisla_mobile/page/components/category_card.dart';
+import 'package:flutter_stisla_mobile/page/add_category.dart';
+import 'package:flutter_stisla_mobile/page/components/category_card.dart';
 import 'package:flutter_stisla_mobile/services/auth_services.dart';
 import 'package:flutter_stisla_mobile/services/category_service.dart';
 import '../models/category_model.dart';
-// import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -158,10 +158,10 @@ class _DashboardState extends State<Dashboard> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CircleAvatar(
-                          backgroundImage:
-                              Image.asset('assets/avatar-1.png').image,
-                        ),
+                        // CircleAvatar(
+                        //   backgroundImage:
+                        //       Image.asset('assets/avatar-1.png').image,
+                        // ),
                         const Text(
                           'Dashboard',
                           style: TextStyle(
@@ -234,64 +234,64 @@ class _DashboardState extends State<Dashboard> {
                     topRight: Radius.circular(25),
                   ),
                 ),
-                // child: (selectedIndex == 0)
-                //     ? isLoading
-                //         // ? CircularPercentIndicator(
-                //         //     radius: 60.0,
-                //         //     lineWidth: 10.0,
-                //         //     percent: 1.0,
-                //         //     animation: true,
-                //         //     center: const Text('Loading'),
-                //         //     progressColor: const Color(0xff6777ef),
-                //         //   )
-                //         // : (ListCategories(
-                //         //     alertContext: _scaffoldkey.currentContext!,
-                //         //     categories: categories,
-                //         //     currentPage: currentPage,
-                //         //     lastPage: lastPage,
-                //         //   ))
-                //         : Column(
-                //             children: [
-                //               const Expanded(
-                //                 flex: 1,
-                //                 child: Center(
-                //                   child: Text(
-                //                     'Categories Data',
-                //                     style: TextStyle(
-                //                       fontSize: 20.0,
-                //                       fontWeight: FontWeight.bold,
-                //                       color: Color(0xff6777ef),
-                //                     ),
-                //                   ),
-                //                 ),
-                //               ),
-                //               Expanded(
-                //                 flex: 6,
-                //                 child: GridView.builder(
-                //                   controller: scrollController,
-                //                   padding: const EdgeInsets.symmetric(
-                //                     horizontal: 16.0,
-                //                     vertical: 25.0,
-                //                   ),
-                //                   gridDelegate:
-                //                       SliverGridDelegateWithMaxCrossAxisExtent(
-                //                     maxCrossAxisExtent:
-                //                         MediaQuery.of(context).size.width / 2,
-                //                     childAspectRatio: 2 / 2,
-                //                     crossAxisSpacing: 8,
-                //                     mainAxisSpacing: 10,
-                //                   ),
-                //                   itemCount: categories.length,
-                //                   // itemBuilder: (context, index) => CategoryCard(
-                //                   //   alertContext: _scaffoldkey.currentContext!,
-                //                   //   category: categories[index],
-                //                   //   deleteData: deleteData,
-                //                   // ),
-                //                 ),
-                //               ),
-                //             ],
-                //           )
-                // : const AddCategory(),
+                child: (selectedIndex == 0)
+                    ? isLoading
+                        ? CircularPercentIndicator(
+                            radius: 60.0,
+                            lineWidth: 10.0,
+                            percent: 1.0,
+                            animation: true,
+                            center: const Text('Loading'),
+                            progressColor: const Color(0xff6777ef),
+                          )
+                        // : (ListCategories(
+                        //     alertContext: _scaffoldkey.currentContext!,
+                        //     categories: categories,
+                        //     currentPage: currentPage,
+                        //     lastPage: lastPage,
+                        //   ))
+                        : Column(
+                            children: [
+                              const Expanded(
+                                flex: 1,
+                                child: Center(
+                                  child: Text(
+                                    'Categories Data',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xff6777ef),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 6,
+                                child: GridView.builder(
+                                  controller: scrollController,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 16.0,
+                                    vertical: 25.0,
+                                  ),
+                                  gridDelegate:
+                                      SliverGridDelegateWithMaxCrossAxisExtent(
+                                    maxCrossAxisExtent:
+                                        MediaQuery.of(context).size.width / 2,
+                                    childAspectRatio: 2 / 2,
+                                    crossAxisSpacing: 8,
+                                    mainAxisSpacing: 10,
+                                  ),
+                                  itemCount: categories.length,
+                                  itemBuilder: (context, index) => CategoryCard(
+                                    alertContext: _scaffoldkey.currentContext!,
+                                    category: categories[index],
+                                    deleteData: deleteData,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                    : const AddCategory(),
               ),
             ),
           ],

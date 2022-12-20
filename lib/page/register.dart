@@ -9,14 +9,18 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final TextEditingController nameController =
-      TextEditingController(text: 'Taufik');
-  final TextEditingController emailController =
-      TextEditingController(text: '...@gmail.com');
-  final TextEditingController passwordController =
-      TextEditingController(text: 'password');
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final TextEditingController passwordConfirmationController =
-      TextEditingController(text: 'password');
+      TextEditingController();
+
+  bool isLoading = false;
+
+  String? nameError;
+  String? emailError;
+  String? passwordError;
+  String? passwordConfirmationError;
 
   @override
   Widget build(BuildContext context) {
@@ -137,6 +141,15 @@ class _RegisterPageState extends State<RegisterPage> {
                                 prefixIcon: Icon(
                                   Icons.key,
                                   color: Colors.grey[600],
+                                ),
+                                errorText: nameError,
+                                errorStyle: const TextStyle(
+                                  fontSize: 16.0,
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderSide: const BorderSide(
+                                      color: Colors.red, width: 1.0),
                                 ),
                               ),
                               obscureText: true,
